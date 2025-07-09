@@ -13,7 +13,7 @@ const Card: React.FC<Card> = ({ frontImg, backImg, name, types, stats }) => {
     const [image, setImage] = useState(frontImg)
     console.log(stats)
     console.log(types)
-    const getColorByType = (type) => {
+    const getColorByType = (type:string) => {
         if (type === "water") {
             return "type-water"
         }

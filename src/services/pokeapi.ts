@@ -5,7 +5,7 @@ export const getPokemons = async function(offset = 50){
     const result = await fetch(`${API_URL}/pokemon?limit=${offset}`);
     const data = await result.json();
      let results = data.results;
-    let promisesArray = results.map((result) => {
+    let promisesArray = results.map((result:any) => {
       return fetch(result.url).then(response => response.json());
     })
     return Promise.all(promisesArray);
